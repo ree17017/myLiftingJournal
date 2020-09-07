@@ -1,8 +1,13 @@
 import React from "react";
+import Header from "./components/Header/Header";
 import "./App.css";
 
 function App() {
-    return <h1 className="App-header">myLiftJournal</h1>;
+    return (
+        <div className="App">
+            <Header />
+        </div>
+    );
 }
 
 export default App;
