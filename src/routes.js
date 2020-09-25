@@ -3,9 +3,18 @@ import { Route, Switch, Redirect } from "react-router-dom";
 //import Login from "./Login.js";
 
 const ROUTES = [
-    { path: "/", key: "HOME", exact: true, component: () => <h1>Home</h1> },
+    { path: "/", key: "Home", exact: true, component: () => <h1 data-testid="home-page">Home</h1> },
     {
-        path: "",
+        path: "/login",
+        key: "Login",
+        exact: true,
+        component: () => <h1 data-testid="login-page">LOGIN</h1>,
+    },
+    {
+        path: "/registration",
+        key: "Registration",
+        exact: true,
+        component: () => <h1 data-testid="registration-page">Registration</h1>,
     },
 ];
 export default ROUTES;
@@ -28,7 +37,7 @@ export function RenderRoutes({ routes }) {
             {routes.map((route, i) => {
                 return <RouteWithSubRoutes key={route.key} {...route} />;
             })}
-            <Route component={() => <h1>Not Found!</h1>} />
+            <Route component={() => <h1 data-testid="not-found">Not Found!</h1>} />
         </Switch>
     );
 }
